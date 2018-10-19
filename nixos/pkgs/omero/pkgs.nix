@@ -3,7 +3,7 @@
 # This attribute set is the only place where we should keep packages
 # for OMERO so to make it easy to change and track them. In fact,
 # this is where we select package versions that are compatible with
-# a given OMERO release---5.4.0 currently.
+# a given OMERO release---5.4.8 currently.
 #
 { pkgs, lib, pykgs, omero-runtime-deps, wrap-utils }:  # 17.03  NOTE (1)
 

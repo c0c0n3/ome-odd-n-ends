@@ -30,11 +30,11 @@ in rec {
     inherit buildPythonPackage;
   };
 
-  omero-marshal = callPackage ./omero-marshal.nix {  # 0.5.1
+  omero-marshal = callPackage ./omero-marshal.nix {  # 0.5.3
     inherit buildPythonPackage omero-py;
   };
 
-  omero-py = callPackage ./omero-py.nix {  # 5.4.0
+  omero-py = callPackage ./omero-py.nix {  # 5.4.8
     inherit python buildPythonPackage zeroc-ice-py;
   };
 
@@ -76,3 +76,19 @@ in rec {
 # bundles the packages you list in the argument function with the base Python
 # runtime, so that the interpreter can find those packages. Read about it in
 # the Nixpkgs manual.
+#
+# 3. TODO django_redis. OMERO 5.4.8 added a dependency on django-redis>=4.4,<4.9
+# but NixOS 17.3 has django_redis 4.2.0. Nix 18 comes with version 4.5, I tried
+# to use the corresponding Nix expression as is in Nix 18 but didn't work. Then
+# I tried this override:
+# django-redis = pykgs.django_redis.overrideAttrs (oldAttrs: rec {
+#    name = "django-redis-${version}";
+#    version = "4.5.0";           # 4.2.0 in NixOS 17.03
+#    src = pkgs.fetchurl {
+#      url = "mirror://pypi/d/django-redis/${name}.tar.gz";
+#      sha256 = "170dbk1wmdg0mxp5m3376zz54dyxmhmhnswrccf0jnny1wqcgpsp";
+#    };
+#  });
+# which didn't work either. Figure out what to do!!!
+# Oh, when you have a viable django_redis package, don't forget to add it to
+# the py-runtime in nixos/pkgs/omero/deps.nix.

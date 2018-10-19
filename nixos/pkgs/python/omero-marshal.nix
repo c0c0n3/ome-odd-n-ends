@@ -17,7 +17,7 @@ with lib;
 buildPythonPackage rec {
 
   name = "omero-marshal-${version}";
-  version = "0.5.1";
+  version = "0.5.3";
   meta = {
     homepage = "https://github.com/openmicroscopy/omero-marshal";
     description = ''
@@ -35,7 +35,7 @@ buildPythonPackage rec {
   in
   fetchurl {
     url = "mirror://pypi/${substring 0 1 pname}/${pname}/${file}";
-    sha256 = "14gwxp53r027n9s60vv988yv6sqjmbrjn9q3c2i8dlpqhaa9xjcl";
+    sha256 = "0vwr7v2dzyh7vgacpg6dcq9lzxi3n0v3dh10x7v1yjyzcnmyi0kv";
   };
 
   propagatedBuildInputs = [ omero-py ];  # NOTE (1)

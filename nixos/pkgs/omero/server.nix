@@ -46,8 +46,8 @@ in
 stdenv.mkDerivation rec {
 
   name = "OMERO.server-${version}";
-  release = "5.4.0";
-  version = "${release}-ice36-b74";
+  release = "5.4.8";
+  version = "${release}-ice36-b99";
   meta = {
     homepage = "https://www.openmicroscopy.org/";
     description = ''
@@ -60,7 +60,7 @@ stdenv.mkDerivation rec {
   src = fetchurl {
     url = "http://downloads.openmicroscopy.org/omero/" +
           "${release}/artifacts/${name}.zip";
-    sha256 = "ab12d5b9e6be1a0fdfbd273398b85cd6a92d271e6e94bd9902b053b73a86ebe4";
+    sha256 = "0v84nhx8i5zn8ssb6i5l2n2lfd2is79cf37y5qk54zfjzccxkgq2";
   };
 
   phases = [ "installPhase" ];

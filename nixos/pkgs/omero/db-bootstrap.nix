@@ -1,7 +1,9 @@
 #
-# OMERO 5.3 database bootstrap package for NixOS 17.03.
+# OMERO 5.4 database bootstrap package for NixOS 17.03.
 # Installs a `omero-bootstrap-db` command to bootstrap the OMERO database
 # as documented in `db-boostrap.py`.
+#
+# NOTE. This package works just as well for an OMERO 5.3 database.
 #
 { # lib imports
   stdenv, wrap-utils,

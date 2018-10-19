@@ -1,5 +1,5 @@
 #
-# OMERO.py 5.3 package for NixOS 17.03.
+# OMERO.py 5.4 package for NixOS 17.03.
 #
 { # lib imports & build
   fetchurl, lib, buildPythonPackage, python, unzip,
@@ -12,8 +12,8 @@ with lib;
 buildPythonPackage rec {
 
   name = "OMERO.py-${version}";
-  release = "5.4.0";
-  version = "${release}-ice36-b74";
+  release = "5.4.8";
+  version = "${release}-ice36-b99";
   meta = {
     homepage = "https://www.openmicroscopy.org/";
     description = "OMERO Python language bindings.";
@@ -28,7 +28,7 @@ buildPythonPackage rec {
   src = fetchurl {
     url = "http://downloads.openmicroscopy.org/omero/" +
           "${release}/artifacts/${name}.zip";
-    sha256 = "b1e1c964ef350e6343c36617da315b2f80b862a284ae054181cc30761ed78fad";
+    sha256 = "1cnbigm38c5d5jdp977f0v3va88kjf5yav34ijp00f2bnfqxf3q1";
   };
 
   phases = [ "unpackPhase" "installPhase" ];
