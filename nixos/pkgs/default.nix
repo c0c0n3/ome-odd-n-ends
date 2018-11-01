@@ -1,9 +1,9 @@
 #
 # Puts together all our custom packages.
 #
-{ pkgs, ... }:
+{ ... }:
 
-with pkgs;
+with import ./pkgs-from-json.nix { json = ./nixos-17-03.json; };
 
 rec {
 

@@ -31,7 +31,7 @@ with lib;
     web.enable = true;
     users.root.password = "abc123";
 
-    smuggler.enable = true;
+#    smuggler.enable = true;
   };
 /*
   environment.systemPackages = [
